@@ -1,316 +1,204 @@
-/* Reset & Base */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
-    color: #e0e0e0;
+    background: #0d0d0d;
+    color: #ffffff;
     min-height: 100vh;
-    line-height: 1.6;
+    position: relative;
 }
 
+/* Dark Gym Background */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at top, #1a1a1a, #000000 70%);
+    z-index: -1;
+}
+
+/* Container */
 .container {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
 }
 
 /* Header */
 header {
     text-align: center;
-    margin-bottom: 2.5rem;
+    margin-bottom: 40px;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    background: linear-gradient(90deg, #ff6b35, #f72585);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 0.5rem;
+    font-size: 3rem;
+    color: #ff3c00;
+    letter-spacing: 2px;
 }
 
-.subtitle {
-    color: #888;
-    font-size: 1rem;
+header p {
+    color: #cccccc;
+    margin-top: 10px;
 }
 
-/* Input Section */
-.input-section {
-    background: rgba(255, 255, 255, 0.03);
+/* Cards */
+.card {
+    background: #141414;
+    padding: 25px;
     border-radius: 12px;
-    padding: 2rem;
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 20px rgba(255, 60, 0, 0.15);
+    margin-bottom: 25px;
 }
 
-.form-group {
-    margin-bottom: 1.25rem;
+/* Inputs */
+.input-group {
+    margin-bottom: 18px;
 }
 
-.form-group label {
+.input-group label {
     display: block;
-    margin-bottom: 0.5rem;
-    color: #aaa;
+    margin-bottom: 6px;
+    color: #aaaaaa;
     font-size: 0.9rem;
-    font-weight: 500;
 }
 
-.form-group input,
-.form-group select {
+.input-group input,
+.input-group select {
     width: 100%;
-    padding: 0.85rem 1rem;
-    background: rgba(0, 0, 0, 0.4);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: #1f1f1f;
     color: #fff;
-    font-size: 1rem;
-    transition: all 0.3s ease;
+    outline: none;
+    transition: 0.2s ease;
 }
 
-.form-group input:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: #ff6b35;
-    box-shadow: 0 0 15px rgba(255, 107, 53, 0.3);
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #ff3c00;
 }
 
 /* Buttons */
-.btn {
+.primary-btn,
+.secondary-btn {
     width: 100%;
-    padding: 1rem;
+    padding: 12px;
+    border-radius: 6px;
     border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 0.5rem;
+    font-weight: bold;
+    transition: 0.2s ease;
 }
 
-.btn-primary {
-    background: linear-gradient(135deg, #ff6b35, #f72585);
+.primary-btn {
+    background: #ff3c00;
     color: #fff;
 }
 
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+.primary-btn:hover {
+    background: #ff5c1f;
 }
 
-.btn-secondary {
-    background: rgba(255, 255, 255, 0.1);
-    color: #e0e0e0;
+.secondary-btn {
+    background: #222;
+    color: #fff;
+    margin-top: 10px;
 }
 
-.btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.2);
+.secondary-btn:hover {
+    background: #333;
+}
+
+.secondary-btn.danger {
+    background: #8b0000;
+}
+
+.secondary-btn.danger:hover {
+    background: #b30000;
+}
+
+/* Metrics */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    text-align: center;
+}
+
+.metrics-grid span {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.metrics-grid h3 {
+    margin-top: 5px;
+    color: #ff3c00;
+}
+
+/* Workout Grid */
+.workout-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.workout-card {
+    background: #1c1c1c;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #2a2a2a;
+}
+
+.workout-card h4 {
+    margin-bottom: 10px;
+    color: #ff3c00;
+}
+
+.workout-card p {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* Feedback Buttons */
+.feedback-buttons {
+    margin-top: 20px;
 }
 
 /* Loading */
 .loading {
     text-align: center;
-    padding: 3rem;
+    margin: 20px 0;
 }
 
 .spinner {
-    width: 50px;
-    height: 50px;
-    border: 3px solid rgba(255, 107, 53, 0.3);
-    border-top-color: #ff6b35;
+    width: 40px;
+    height: 40px;
+    border: 4px solid #333;
+    border-top: 4px solid #ff3c00;
     border-radius: 50%;
+    margin: 0 auto 10px;
     animation: spin 1s linear infinite;
-    margin: 0 auto 1rem;
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
-/* Results Section */
-.results-section {
-    animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Metrics Grid */
-.metrics {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.metric-card {
-    background: rgba(255, 255, 255, 0.04);
-    padding: 1.25rem;
-    border-radius: 10px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.metric-label {
-    display: block;
-    color: #888;
-    font-size: 0.8rem;
-    margin-bottom: 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.metric-value {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #fff;
-}
-
-.intensity-badge {
-    display: inline-block;
-    padding: 0.4rem 0.8rem;
-    background: linear-gradient(135deg, #ff6b35, #f72585);
-    border-radius: 20px;
-    font-size: 1rem !important;
-}
-
-/* AI Reasoning */
-.ai-reasoning {
-    background: rgba(255, 107, 53, 0.08);
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    border-left: 4px solid #ff6b35;
-}
-
-.ai-reasoning h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-    color: #ff6b35;
-}
-
-.ai-reasoning p {
-    color: #ccc;
-    font-size: 0.95rem;
-}
-
-/* Workout Plan */
-.workout-plan {
-    margin-bottom: 2rem;
-}
-
-.workout-plan h3 {
-    font-size: 1.3rem;
-    margin-bottom: 1rem;
-    color: #f72585;
-}
-
-.exercises-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.exercise-card {
-    background: rgba(255, 255, 255, 0.04);
-    padding: 1.25rem;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: all 0.3s ease;
-}
-
-.exercise-card:hover {
-    background: rgba(255, 255, 255, 0.08);
-    transform: translateX(5px);
-}
-
-.exercise-name {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 0.5rem;
-}
-
-.exercise-details {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 0.5rem;
-    margin-top: 0.75rem;
-}
-
-.detail-item {
-    font-size: 0.85rem;
-    color: #999;
-}
-
-.detail-item span {
-    color: #ff6b35;
-    font-weight: 500;
-}
-
-/* Adjustment Section */
-.adjustment-section {
-    text-align: center;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 10px;
-}
-
-.adjustment-section p {
-    color: #aaa;
-    margin-bottom: 1rem;
-}
-
-.adjustment-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-
-.adjustment-buttons .btn {
-    width: auto;
-    margin-top: 0;
-    padding: 0.75rem 1.5rem;
-}
-
-/* Error */
-.error {
-    background: rgba(247, 37, 133, 0.15);
-    border: 1px solid #f72585;
-    color: #f72585;
-    padding: 1rem;
-    border-radius: 8px;
-    text-align: center;
-}
-
-/* Utility Classes */
+/* Utilities */
 .hidden {
-    display: none !important;
+    display: none;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 2rem;
-    }
-    
-    .input-section,
-    .ai-reasoning,
-    .workout-plan {
-        padding: 1.25rem;
-    }
-    
-    .adjustment-buttons {
-        flex-direction: column;
-    }
-    
-    .adjustment-buttons .btn {
-        width: 100%;
-    }
+.error-message {
+    color: #ff4d4d;
+    margin-top: 10px;
+    font-size: 0.85rem;
 }
