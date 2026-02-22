@@ -1,15 +1,134 @@
-htmlAgentFit - AI Gym Instructor
-<h1>⚡ AgentFit</h1>
-<p class="subtitle">Your AI-Powered Gym Instructor</p>
-AgeWeight (kg)
-Height (cm)
-Fitness Goal
-Generate Workout Plan<p>
-    AI is analyzing your profile...</p>
-    BMI--BMR-- kcalTDEE-- kcalIntensity--<h3>
-        🤖 AI Reasoning</h3>
-        <p>
-        </p>
-        <h3>💪 Your Workout Plan</h3>
-        <p>
-        </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AgentFit | AI Gym Instructor</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <!-- Background Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Header -->
+        <header>
+            <h1>AgentFit</h1>
+            <p>Your AI-Powered Gym Instructor</p>
+        </header>
+
+        <!-- Login Section -->
+        <section id="login-section" class="card">
+            <h2>Login</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" id="email" required />
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" id="password" required />
+                </div>
+
+                <button type="submit" class="primary-btn">Login</button>
+                <p id="login-error" class="error-message"></p>
+            </form>
+        </section>
+
+        <!-- Main App Section -->
+        <section id="app-section" class="hidden">
+
+            <!-- User Input Card -->
+            <div class="card">
+                <h2>Enter Your Details</h2>
+
+                <div class="input-group">
+                    <label>Age</label>
+                    <input type="number" id="age" min="10" max="100" required />
+                </div>
+
+                <div class="input-group">
+                    <label>Weight (kg)</label>
+                    <input type="number" id="weight" min="30" max="200" required />
+                </div>
+
+                <div class="input-group">
+                    <label>Height (cm)</label>
+                    <input type="number" id="height" min="120" max="220" required />
+                </div>
+
+                <div class="input-group">
+                    <label>Goal</label>
+                    <select id="goal" required>
+                        <option value="">Select Goal</option>
+                        <option value="Lose Fat">Lose Fat</option>
+                        <option value="Gain Muscle">Gain Muscle</option>
+                        <option value="Bulk">Bulk</option>
+                    </select>
+                </div>
+
+                <button id="generate-btn" class="primary-btn">
+                    Generate Workout
+                </button>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Generating your AI workout...</p>
+            </div>
+
+            <!-- Results Section -->
+            <div id="results-section" class="hidden">
+
+                <!-- Metrics Card -->
+                <div class="card metrics">
+                    <h2>Your Metrics</h2>
+                    <div class="metrics-grid">
+                        <div>
+                            <span>BMI</span>
+                            <h3 id="bmi">-</h3>
+                        </div>
+                        <div>
+                            <span>BMR</span>
+                            <h3 id="bmr">-</h3>
+                        </div>
+                        <div>
+                            <span>TDEE</span>
+                            <h3 id="tdee">-</h3>
+                        </div>
+                        <div>
+                            <span>Intensity</span>
+                            <h3 id="intensity">-</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workout Card -->
+                <div class="card">
+                    <h2>Your Workout Plan</h2>
+                    <div id="workout-container" class="workout-grid"></div>
+
+                    <div class="feedback-buttons">
+                        <button id="too-easy" class="secondary-btn">
+                            Too Easy
+                        </button>
+                        <button id="too-hard" class="secondary-btn danger">
+                            Too Hard
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
